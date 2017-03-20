@@ -31,12 +31,13 @@ type IssueService struct {
 
 // Issue represents a JIRA issue.
 type Issue struct {
-	Expand    string       `json:"expand,omitempty" structs:"expand,omitempty"`
-	ID        string       `json:"id,omitempty" structs:"id,omitempty"`
-	Self      string       `json:"self,omitempty" structs:"self,omitempty"`
-	Key       string       `json:"key,omitempty" structs:"key,omitempty"`
-	Fields    *IssueFields `json:"fields,omitempty" structs:"fields,omitempty"`
-	Changelog *Changelog   `json:"changelog,omitempty" structs:"changelog,omitempty"`
+	Expand     string                `json:"expand,omitempty" structs:"expand,omitempty"`
+	ID         string                `json:"id,omitempty" structs:"id,omitempty"`
+	Self       string                `json:"self,omitempty" structs:"self,omitempty"`
+	Key        string                `json:"key,omitempty" structs:"key,omitempty"`
+	Fields     *IssueFields          `json:"fields,omitempty" structs:"fields,omitempty"`
+	Changelog  *Changelog            `json:"changelog,omitempty" structs:"changelog,omitempty"`
+	Properties tcontainer.MarshalMap `json:"properties,omitempty" structs:"properties,omitempty"`
 }
 
 // ChangelogItems reflects one single changelog item of a history item
